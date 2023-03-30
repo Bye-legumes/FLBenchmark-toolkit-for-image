@@ -1,14 +1,14 @@
 from setuptools import setup
 
 setup(
-    name='flbenchmark',
-    version='0.1.3',
-    description='flbenchmark',
-    author='stneng',
-    author_email='git@stneng.com',
-    url='https://github.com/AI-secure/FLBenchmark-toolkit',
-    packages=['flbenchmark', 'flbenchmark.datasets', 'flbenchmark.logging'],
-    package_dir={'flbenchmark': 'src'},
+    name='flmedbenchmark',
+    version='0.1.0',
+    description='flmedbenchmark',
+    author='zhilong',
+    author_email='zhilong.chen@mail.mcgill.ca',
+    url='https://github.com/Bye-legumes/FLBenchmark-toolkit-for-image',
+    packages=['flmedbenchmark', 'flmedbenchmark.datasets', 'flmedbenchmark.logging'],
+    package_dir={'flmedbenchmark': 'src'},
     install_requires=[
         'pandas>=0.25',
         'numpy>=1.18',
