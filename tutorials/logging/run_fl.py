@@ -1,11 +1,11 @@
 from time import sleep
 from multiprocessing import Process, Pipe
 import random
-import flbenchmark.logging
+import flmedbenchmark.logging
 
 
 def client(id, pipe):
-    logger = flbenchmark.logging.Logger(id=id, agent_type='client')
+    logger = flmedbenchmark.logging.Logger(id=id, agent_type='client')
     # Log the data processing
     with logger.preprocess_data():
         sleep(0.3)
@@ -35,7 +35,7 @@ def client(id, pipe):
 
 
 def client2(id, pipe):
-    logger = flbenchmark.logging.Logger(id=id, agent_type='client')
+    logger = flmedbenchmark.logging.Logger(id=id, agent_type='client')
     # Log the data processing
     logger.preprocess_data_start()
     sleep(0.3)
@@ -66,7 +66,7 @@ def client2(id, pipe):
 
 
 def aggregator(id, pipe1, pipe2):
-    with flbenchmark.logging.Logger(id=id, agent_type='aggregator') as logger:
+    with flmedbenchmark.logging.Logger(id=id, agent_type='aggregator') as logger:
         weights = [0.0, 0.0]
         with logger.training():
             for i in range(4):

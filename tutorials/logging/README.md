@@ -1,4 +1,4 @@
-# Federated Learning Benchmark (flbenchmark) Logging Module
+# Federated Learning Framework Benchmark for Medical Image (flmedbenchmark) Logging Module
 
 ## Run an example with 2 clients and 1 aggregator
 ```

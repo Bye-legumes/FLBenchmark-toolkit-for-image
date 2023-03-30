@@ -15,9 +15,9 @@ In the workflow of the evaluation, the toolkit provides the configuration and th
 
 In addition to the two files required above, the programmer can also create other files that might help the execution of the custom FL framework and include them in the Dockerfile.
 
-To finish the integration for the custom framework, one should build the docker image. Ideally, the docker image should be named `flbenchmark/custom` with tag `framework-name` (please keep the image name as `flbenchmark/custom` and you can custom the `framework-name`).
+To finish the integration for the custom framework, one should build the docker image. Ideally, the docker image should be named `flmedbenchmark/custom` with tag `framework-name` (please keep the image name as `flmedbenchmark/custom` and you can custom the `framework-name`).
 ```
-docker build -t flbenchmark/custom:demo .  # here we use "demo" as the `framework-name`
+docker build -t flmedbenchmark/custom:demo .  # here we use "demo" as the `framework-name`
 ```
 
 ## How to run the integrated custom framework
@@ -26,5 +26,5 @@ Once the docker image is created and built/distributed to all evaluation nodes, 
 In local benchmark mode, the evaluation node is the local host. In remote benchmark mode, the evaluation nodes are the hosts specified in `bench_param`.
 And one should set the `framework` field in the configuration file as `custom:framework-name` to test the integration.
 ```
-python -m flbenchmark config.json 
+python -m flmedbenchmark config.json 
 ```

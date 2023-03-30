@@ -1,5 +1,5 @@
-import flbenchmark.logging
+import flmedbenchmark.logging
 
 
 if __name__ == '__main__':
-    flbenchmark.logging.get_report('./log')
+    flmedbenchmark.logging.get_report('./log')
