@@ -60,7 +60,7 @@ class BasicLogger:
             self.dir = os.path.expanduser(dir)
         if not os.path.exists(self.dir):
             os.makedirs(self.dir)
-        self.logs = [{"flbenchmark": "start", "timestamp": time.time(), "agent_type": self.agent_type}]
+        self.logs = [{"flmedbenchmark": "start", "timestamp": time.time(), "agent_type": self.agent_type}]
         self.training_round_auto_increment = 0
         self.computation_auto_increment = 0
         self.communication_auto_increment = 0
@@ -94,7 +94,7 @@ class BasicLogger:
         self.logs.clear()
 
     def end(self):
-        self.logs.append({"flbenchmark": "end", "timestamp": time.time()})
+        self.logs.append({"flmedbenchmark": "end", "timestamp": time.time()})
         self.flush()
 
     def preprocess_data(self) -> LoggerContext:

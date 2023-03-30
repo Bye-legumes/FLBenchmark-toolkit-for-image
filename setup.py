@@ -6,7 +6,7 @@ setup(
     description='flmedbenchmark',
     author='zhilong',
     author_email='zhilong.chen@mail.mcgill.ca',
-    url='https://github.com/Bye-legumes/FLBenchmark-toolkit-for-image',
+    url='https://https://github.com/Bye-legumes/FLMedbenchmark-toolkit-for-image',
     packages=['flmedbenchmark', 'flmedbenchmark.datasets', 'flmedbenchmark.logging'],
     package_dir={'flmedbenchmark': 'src'},
     install_requires=[

@@ -4,7 +4,6 @@
 /tmp/
 /build/
 /dist/
-/flbenchmark.egg-info/
 /.vscode/
 /log/
 /tutorials/**/data/

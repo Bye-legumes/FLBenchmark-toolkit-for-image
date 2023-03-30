@@ -2,12 +2,12 @@ from time import sleep
 from multiprocessing import Process, Pipe
 import random
 import json
-import flbenchmark.datasets
-import flbenchmark.logging
+import flmedbenchmark.datasets
+import flmedbenchmark.logging
 
 config = json.load(open('/test/config.json', 'r'))
 
-flbd = flbenchmark.datasets.FLBDatasets('/data')
+flbd = flmedbenchmark.datasets.FLBDatasets('/data')
 
 train_dataset, test_dataset = flbd.fateDatasets(config['dataset'])
 
@@ -16,7 +16,7 @@ if len(train_dataset.parties) != 2:
 
 
 def client(id, pipe):
-    logger = flbenchmark.logging.Logger(id=id, agent_type='client', dir='/test/log')
+    logger = flmedbenchmark.logging.Logger(id=id, agent_type='client', dir='/test/log')
     # Log the data processing
     with logger.preprocess_data():
         sleep(0.3)
@@ -44,7 +44,7 @@ def client(id, pipe):
 
 
 def client2(id, pipe):
-    logger = flbenchmark.logging.Logger(id=id, agent_type='client')
+    logger = flmedbenchmark.logging.Logger(id=id, agent_type='client')
     # Log the data processing
     logger.preprocess_data_start()
     sleep(0.3)
@@ -73,7 +73,7 @@ def client2(id, pipe):
 
 
 def aggregator(id, pipe1, pipe2):
-    with flbenchmark.logging.Logger(id=id, agent_type='aggregator') as logger:
+    with flmedbenchmark.logging.Logger(id=id, agent_type='aggregator') as logger:
         weights = [0.0, 0.0]
         with logger.training():
             for i in range(config['training_param']['epochs']):

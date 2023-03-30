@@ -28,7 +28,7 @@ def get_report(log_dir: str):
         except:
             print('The benchmark is not finished or the log files are broken.')
             exit(0)
-        if log.get('flbenchmark') is None or log['flbenchmark'] != 'end':
+        if log.get('flmedbenchmark') is None or log['flmedbenchmark'] != 'end':
             print('The benchmark is not finished or the log files are broken.')
             exit(0)
 
@@ -47,8 +47,8 @@ def get_report(log_dir: str):
         events = {}
         for line in lines:
             log = json.loads(line)
-            if log.get('flbenchmark') is not None:
-                if log['flbenchmark'] == 'start':
+            if log.get('flmedbenchmark') is not None:
+                if log['flmedbenchmark'] == 'start':
                     if agents.get(log['agent_type']) is None:
                         agents[log['agent_type']] = []
                     agents[log['agent_type']].append(id)
